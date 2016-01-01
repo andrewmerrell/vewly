@@ -2,6 +2,8 @@
 <head>
   <title>Vewly</title>
 
+  <meta name=viewport content="width=device-width, initial-scale=1">
+
   <style type="text/css">
     html, body, div, section, article,
     h1, h2, h3, h4, h5, h6 {
@@ -14,7 +16,7 @@
     }
 
     body {
-      background: url(city.jpeg) no-repeat;
+      background: url(city.jpg) no-repeat;
       background-size: cover;
       font-family: "Lato", sans-serif;
       color: #fff;
@@ -50,8 +52,6 @@
       color: #BF2026;
     }
   </style>
-
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -61,6 +61,18 @@
       <h2>We <span class="vewly-red">&#10084;</span> telly</h2>
     </article>
   </section>
+
+  <script>
+    var cb = function() {
+      var l = document.createElement('link'); l.rel = 'stylesheet';
+      l.href = 'https://fonts.googleapis.com/css?family=Lato:300,700';
+      var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+    };
+    var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+        webkitRequestAnimationFrame || msRequestAnimationFrame;
+    if (raf) raf(cb);
+    else window.addEventListener('load', cb);
+  </script>
 
 </body>
 </html>
